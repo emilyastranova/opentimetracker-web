@@ -2,15 +2,18 @@
 	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 	import Fa from 'svelte-fa';
 	import { faClock, faHouse, faNoteSticky, faCog } from '@fortawesome/free-solid-svg-icons';
+	import { DarkMode } from 'flowbite-svelte';
 </script>
 
-<Navbar
-	navClass="px-2 sm:px-4 py-2.5 absolute w-full z-20 top-0 left-0 border-b"
+<div class="relative min-w-full">
+<DarkMode initialTheme="dark" class="hidden"/>
+	<Navbar
+	navClass="px-2 sm:px-4 py-2.5 z-20 top-0 left-0 border-b"
 	let:hidden
 	let:toggle
 >
 	<NavBrand href="/">
-		<Fa icon={faClock} class="text-xl mr-2" />
+		<Fa icon={faClock} class="text-xl mx-2" />
 		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
 			>OpenTimeTracker</span
 		>
@@ -34,3 +37,4 @@
 		</NavLi>
 	</NavUl>
 </Navbar>
+</div>
